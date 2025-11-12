@@ -6,12 +6,14 @@ import { Sparkles, ChevronRight, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { useCart } from "@/contexts/CartContext";
 
 const DiscoverScent = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
   const [recommendations, setRecommendations] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { addToCart } = useCart();
 
   const questions = [
     {
@@ -45,15 +47,28 @@ const DiscoverScent = () => {
     } else {
       // Quiz complete - get AI recommendations
       setIsLoading(true);
+      setCurrentQuestion(questions.length); // Move to results view
       toast.success("Quiz complete! Calculating your perfect scent...");
       
       try {
+        console.log('Invoking get-scent-recommendations with answers:', newAnswers);
         const { data, error } = await supabase.functions.invoke('get-scent-recommendations', {
           body: { answers: newAnswers }
         });
 
-        if (error) throw error;
+        console.log('Function response - data:', data, 'error:', error);
+
+        if (error) {
+          console.error('Function error:', error);
+          throw error;
+        }
         
+        if (!data || !Array.isArray(data.recommendations) || data.recommendations.length === 0) {
+          console.error('Invalid or empty data structure:', data);
+          throw new Error('Invalid or empty response');
+        }
+
+        console.log('Setting recommendations:', data.recommendations);
         setRecommendations(data.recommendations);
         toast.success("Your personalized recommendations are ready!");
       } catch (error) {
@@ -61,9 +76,9 @@ const DiscoverScent = () => {
         toast.error("Failed to get recommendations. Showing defaults.");
         // Fallback recommendations
         setRecommendations([
-          { name: "Amerul Oud", match: "95%", reason: "Rich and luxurious, perfect for your style", category: "Woody & Oriental", price: 299 },
-          { name: "Mogra", match: "88%", reason: "Elegant floral that matches your preference", category: "Floral & Fresh", price: 189 },
-          { name: "CR7", match: "82%", reason: "Fresh and confident for daily wear", category: "Cool & Sporty", price: 219 }
+          { id: "amerul-oud", name: "Amerul Oud", match: "95%", reason: "Rich and luxurious, perfect for your style", category: "Woody & Oriental", price: 299, image: "/placeholder.svg" },
+          { id: "mogra", name: "Mogra", match: "88%", reason: "Elegant floral that matches your preference", category: "Floral & Fresh", price: 189, image: "/placeholder.svg" },
+          { id: "cr7", name: "CR7", match: "82%", reason: "Fresh and confident for daily wear", category: "Cool & Sporty", price: 219, image: "/placeholder.svg" }
         ]);
       } finally {
         setIsLoading(false);
@@ -185,8 +200,19 @@ const DiscoverScent = () => {
                       <h3 className="font-serif text-xl font-semibold mb-2">{rec.name}</h3>
                       <div className="text-luxury-gold font-bold text-2xl mb-2">{rec.match} Match</div>
                       <p className="text-sm text-muted-foreground mb-3">{rec.reason}</p>
-                      <p className="text-lg font-bold gradient-text mb-4">${rec.price}</p>
-                      <Button variant="luxury" size="sm" className="w-full">
+                      <p className="text-lg font-bold gradient-text mb-4">₹{rec.price}</p>
+                      <Button 
+                        variant="luxury" 
+                        size="sm" 
+                        className="w-full"
+                        onClick={() => addToCart({
+                          id: rec.id,
+                          name: rec.name,
+                          price: rec.price,
+                          image: rec.image,
+                          category: rec.category
+                        })}
+                      >
                         Add to Cart
                       </Button>
                     </CardContent>

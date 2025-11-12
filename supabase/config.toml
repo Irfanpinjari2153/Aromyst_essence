@@ -1,1 +1,4 @@
 project_id = "vwgyeqgbvcndzvtbwtrd"
+
+[functions.get-scent-recommendations]
+verify_jwt = false

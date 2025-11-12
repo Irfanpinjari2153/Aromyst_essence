@@ -200,7 +200,7 @@ const Profile = () => {
                             }`}>
                               {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                             </span>
-                            <p className="text-lg font-bold mt-1">${order.total}</p>
+                            <p className="text-lg font-bold mt-1">₹{order.total}</p>
                           </div>
                         </div>
                         
@@ -214,7 +214,7 @@ const Profile = () => {
                               />
                               <div className="flex-1 min-w-0">
                                 <p className="font-medium text-sm sm:text-base truncate">{item.name}</p>
-                                <p className="text-xs sm:text-sm text-muted-foreground">${item.price} x {item.quantity}</p>
+                                <p className="text-xs sm:text-sm text-muted-foreground">₹{item.price} x {item.quantity}</p>
                               </div>
                             </div>
                           ))}
