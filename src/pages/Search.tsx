@@ -6,10 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Search, Filter, SlidersHorizontal, X, Star } from "lucide-react";
 import { useState } from "react";
-import roseImage from "@/assets/perfume-rose.jpg";
-import oudImage from "@/assets/perfume-oud.jpg";
-import oceanImage from "@/assets/perfume-ocean.jpg";
-import heroImage from "@/assets/hero-perfume.jpg";
+import AroImage from "@/assets/Aromystper.jpeg";
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,7 +21,7 @@ const SearchPage = () => {
       description: "An enchanting blend of Bulgarian rose and dark amber, perfect for evening wear.",
       price: 89,
       originalPrice: 120,
-      image: roseImage,
+      image: AroImage,
       rating: 4.8,
       category: "Attar",
       notes: ["Rose", "Amber", "Musk"],
@@ -35,7 +32,7 @@ const SearchPage = () => {
       name: "Golden Oud Premium",
       description: "Rich and sophisticated oud with hints of saffron and vanilla.",
       price: 156,
-      image: oudImage,
+      image: AroImage,
       rating: 4.9,
       category: "Premium",
       notes: ["Oud", "Saffron", "Vanilla"],
@@ -46,7 +43,7 @@ const SearchPage = () => {
       name: "Ocean Breeze Fresh",
       description: "Fresh and invigorating with marine notes and citrus undertones.",
       price: 67,
-      image: oceanImage,
+      image: AroImage,
       rating: 4.6,
       category: "Fresh",
       notes: ["Marine", "Citrus", "Mint"],
@@ -57,7 +54,7 @@ const SearchPage = () => {
       description: "Creamy sandalwood with jasmine and musk, a timeless classic.",
       price: 134,
       originalPrice: 160,
-      image: heroImage,
+      image: AroImage,
       rating: 4.9,
       category: "Woody",
       notes: ["Sandalwood", "Jasmine", "Musk"],
@@ -68,7 +65,7 @@ const SearchPage = () => {
       name: "Desert Storm Spice",
       description: "Bold and mysterious with leather, tobacco, and spice notes.",
       price: 98,
-      image: heroImage,
+      image: AroImage,
       rating: 4.7,
       category: "Spicy",
       notes: ["Leather", "Tobacco", "Spices"],
@@ -78,7 +75,7 @@ const SearchPage = () => {
       name: "White Magnolia Floral",
       description: "Delicate floral bouquet with white flowers and soft musk.",
       price: 78,
-      image: heroImage,
+      image: AroImage,
       rating: 4.5,
       category: "Floral",
       notes: ["Magnolia", "White Flowers", "Musk"],

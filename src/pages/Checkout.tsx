@@ -83,7 +83,8 @@ const Checkout = () => {
             items: items.map(item => ({
               name: item.name,
               quantity: item.quantity,
-              price: item.price
+              price: item.price,
+              variant: item.variant
             })),
             total: total,
             address: fullAddress,
@@ -202,7 +203,7 @@ const Checkout = () => {
                 <CardContent className="space-y-4">
                   <div className="space-y-3 max-h-64 overflow-y-auto">
                     {items.map((item) => (
-                      <div key={item.id} className="flex gap-3">
+                      <div key={`${item.id}-${item.variant}`} className="flex gap-3">
                         <img
                           src={item.image}
                           alt={item.name}
@@ -210,7 +211,12 @@ const Checkout = () => {
                         />
                         <div className="flex-1 min-w-0">
                           <p className="font-medium truncate">{item.name}</p>
-                          <p className="text-sm text-muted-foreground">Qty: {item.quantity}</p>
+                          <div className="flex items-center gap-2">
+                            <p className="text-sm text-muted-foreground">Qty: {item.quantity}</p>
+                            <span className="text-xs px-2 py-0.5 rounded-full bg-accent/20 text-accent font-medium">
+                              {item.variant}
+                            </span>
+                          </div>
                           <p className="text-sm font-semibold">₹{(item.price * item.quantity).toFixed(2)}</p>
                         </div>
                       </div>

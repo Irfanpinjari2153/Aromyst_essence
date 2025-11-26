@@ -9,7 +9,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import roseImage from "@/assets/perfume-rose.jpg";
+import AroImage from "@/assets/Aromystper.jpeg";
 import { OrderDetailsModal } from "@/components/OrderDetailsModal";
 
 const Profile = () => {
@@ -208,7 +208,7 @@ const Profile = () => {
                           {Array.isArray(order.order_items) && order.order_items.map((item: any, index: number) => (
                             <div key={index} className="flex items-center gap-3 sm:gap-4">
                               <img 
-                                src={item.image || roseImage} 
+                                src={item.image || AroImage} 
                                 alt={item.name}
                                 className="w-12 h-12 rounded-lg object-cover"
                               />

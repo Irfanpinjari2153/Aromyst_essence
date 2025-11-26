@@ -4,10 +4,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Star, Award, Sparkles, Heart, Mountain, Flower, Cake, Zap } from "lucide-react";
-import roseImage from "@/assets/perfume-rose.jpg";
-import oudImage from "@/assets/perfume-oud.jpg";
-import oceanImage from "@/assets/perfume-ocean.jpg";
-import heroImage from "@/assets/hero-perfume.jpg";
+import AromystAttar from "@/assets/Aromyst_attar.png";
 
 const Attar = () => {
   const categories = {
@@ -23,7 +20,7 @@ const Attar = () => {
           description: "Rich, smoky oud tone with Arabic warmth",
           price: 299,
           originalPrice: 399,
-          image: oudImage,
+          image: AromystAttar,
           rating: 5.0,
           category: "Woody & Oriental",
           isBestSeller: true,
@@ -33,7 +30,7 @@ const Attar = () => {
           name: "Green Ajmeri",
           description: "Earthy, classic attar vibe with oud base",
           price: 249,
-          image: oudImage,
+          image: AromystAttar,
           rating: 4.9,
           category: "Woody & Oriental",
         },
@@ -42,7 +39,7 @@ const Attar = () => {
           name: "Black Jaguar",
           description: "Bold masculine scent with dark woody notes",
           price: 279,
-          image: oudImage,
+          image: AromystAttar,
           rating: 4.8,
           category: "Woody & Oriental",
           isNew: true,
@@ -52,7 +49,7 @@ const Attar = () => {
           name: "Tam Dao",
           description: "Exquisite sandalwood blend with cedar undertones",
           price: 319,
-          image: oudImage,
+          image: AromystAttar,
           rating: 5.0,
           category: "Woody & Oriental",
           isBestSeller: true,
@@ -62,8 +59,55 @@ const Attar = () => {
           name: "White Oud",
           description: "Pure white oud with soft musk accents",
           price: 329,
-          image: oudImage,
+          image: AromystAttar,
           rating: 4.9,
+          category: "Woody & Oriental",
+        },
+        {
+          id: "attar-19",
+          name: "Purple Oud",
+          description: "Royal oud blend with violet and amber",
+          price: 349,
+          image: AromystAttar,
+          rating: 5.0,
+          category: "Woody & Oriental",
+          isNew: true,
+        },
+        {
+          id: "attar-20",
+          name: "BelaVitta Oud",
+          description: "Luxurious oud with soft floral undertones",
+          price: 339,
+          image: AromystAttar,
+          rating: 4.9,
+          category: "Woody & Oriental",
+        },
+        {
+          id: "attar-21",
+          name: "Shagaf Oud",
+          description: "Passionate oud with rich woody base",
+          price: 359,
+          image: AromystAttar,
+          rating: 5.0,
+          category: "Woody & Oriental",
+          isBestSeller: true,
+        },
+        {
+          id: "attar-22",
+          name: "Khamaraha Latafa",
+          description: "Opulent Arabian oud with spicy notes",
+          price: 369,
+          image: AromystAttar,
+          rating: 4.9,
+          category: "Woody & Oriental",
+        },
+        {
+          id: "attar-23",
+          name: "Sandalwood Amber",
+          description: "Warm sandalwood with golden amber harmony",
+          price: 289,
+          image: AromystAttar,
+          rating: 4.8,
           category: "Woody & Oriental",
         }
       ]
@@ -79,7 +123,7 @@ const Attar = () => {
           name: "Mogra",
           description: "Pure Indian jasmine aroma, traditional favorite",
           price: 189,
-          image: roseImage,
+          image: AromystAttar,
           rating: 4.9,
           category: "Floral & Fresh",
           isBestSeller: true,
@@ -89,7 +133,7 @@ const Attar = () => {
           name: "Dove",
           description: "Soft, clean, and refreshing like a morning breeze",
           price: 149,
-          image: roseImage,
+          image: AromystAttar,
           rating: 4.8,
           category: "Floral & Fresh",
         },
@@ -98,10 +142,20 @@ const Attar = () => {
           name: "Charlie",
           description: "Modern floral fusion with a gentle charm",
           price: 169,
-          image: roseImage,
+          image: AromystAttar,
           rating: 4.7,
           category: "Floral & Fresh",
         },
+        {
+          id: "attar-24",
+          name: "Shanaya",
+          description: "Elegant floral bouquet with rose and jasmine",
+          price: 209,
+          image: AromystAttar,
+          rating: 4.9,
+          category: "Floral & Fresh",
+          isNew: true,
+        }
       ]
     },
     sweet: {
@@ -115,7 +169,7 @@ const Attar = () => {
           name: "Chocolate Musk",
           description: "Creamy, sweet blend with musk depth",
           price: 199,
-          image: heroImage,
+          image: AromystAttar,
           rating: 4.9,
           category: "Sweet & Musky",
           isNew: true,
@@ -125,7 +179,7 @@ const Attar = () => {
           name: "Mitthi",
           description: "Soft, sweet traditional scent reminiscent of rain-soaked earth",
           price: 159,
-          image: heroImage,
+          image: AromystAttar,
           rating: 4.8,
           category: "Sweet & Musky",
         },
@@ -134,7 +188,7 @@ const Attar = () => {
           name: "Blackberry",
           description: "Fruity-sweet with a musky base",
           price: 179,
-          image: heroImage,
+          image: AromystAttar,
           rating: 4.7,
           category: "Sweet & Musky",
         },
@@ -143,7 +197,7 @@ const Attar = () => {
           name: "Musk Rizali",
           description: "Deep musk with rose and amber harmony",
           price: 229,
-          image: heroImage,
+          image: AromystAttar,
           rating: 4.8,
           category: "Sweet & Musky",
         },
@@ -152,7 +206,7 @@ const Attar = () => {
           name: "Bare Vanilla",
           description: "Soft creamy vanilla with gentle embrace",
           price: 219,
-          image: heroImage,
+          image: AromystAttar,
           rating: 4.7,
           category: "Sweet & Musky",
         }
@@ -170,7 +224,7 @@ const Attar = () => {
           description: "Sporty, modern, and vibrant masculine scent",
           price: 219,
           originalPrice: 289,
-          image: heroImage,
+          image: AromystAttar,
           rating: 4.9,
           category: "Cool & Sporty",
           isBestSeller: true,
@@ -180,7 +234,7 @@ const Attar = () => {
           name: "Zatax",
           description: "Strong, fresh blend inspired by designer perfumes",
           price: 199,
-          image: heroImage,
+          image: AromystAttar,
           rating: 4.8,
           category: "Cool & Sporty",
         },
@@ -189,7 +243,7 @@ const Attar = () => {
           name: "Azzaro",
           description: "Premium blend with citrus and spice edges",
           price: 239,
-          image: heroImage,
+          image: AromystAttar,
           rating: 4.9,
           category: "Cool & Sporty",
         },
@@ -198,7 +252,7 @@ const Attar = () => {
           name: "Dior Sauvage",
           description: "Iconic pepper and bergamot fusion with ambroxan",
           price: 349,
-          image: oceanImage,
+          image: AromystAttar,
           rating: 5.0,
           category: "Cool & Sporty",
           isBestSeller: true,
@@ -208,9 +262,19 @@ const Attar = () => {
           name: "Hawas",
           description: "Aquatic freshness with citrus and woody notes",
           price: 269,
-          image: oceanImage,
+          image: AromystAttar,
           rating: 4.9,
           category: "Cool & Sporty",
+        },
+        {
+          id: "attar-25",
+          name: "Cool Water",
+          description: "Fresh aquatic with mint and lavender accents",
+          price: 229,
+          image: AromystAttar,
+          rating: 4.8,
+          category: "Cool & Sporty",
+          isNew: true,
         }
       ]
     }
@@ -300,7 +364,7 @@ const Attar = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden glass-effect">
               <img 
-                src={oudImage} 
+                src={AromystAttar} 
                 alt="Traditional attar making process"
                 className="w-full h-full object-cover"
               />

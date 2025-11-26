@@ -4,10 +4,26 @@ import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Sparkles, Droplets, Wind, Flame } from "lucide-react";
-import roseImage from "@/assets/perfume-rose.jpg";
-import oudImage from "@/assets/perfume-oud.jpg";
-import oceanImage from "@/assets/perfume-ocean.jpg";
-import heroImage from "@/assets/hero-perfume.jpg";
+import AroImage from "@/assets/Aromystper.jpeg";
+import oudImage from "@/assets/Amerul_oud_perfumes.png";
+import Barevanilla from "@/assets/Bare Vanilaperfumes.png";
+import Belavitaoud from "@/assets/belavitaoudperfumes.png";
+import Blackberry from "@/assets/blackberryper.png";
+import Choclatemusk from "@/assets/choclatemuskperfumes.png";
+import Charlieper from "@/assets/charlieperfumes.png";
+import CoolWater from "@/assets/coolwaterperfumes.png";
+import CR7 from "@/assets/CR7_perfumes.png";
+import Dior from "@/assets/diorperfumes.png";
+import Dove from "@/assets/doveperfumes.png";
+import Dyptiq from "@/assets/dyptiqper.png";
+import GreenAjmeri from "@/assets/greenajmeriperfumes.png";
+import Hawas from "@/assets/hawasperfumes.png";
+import BlackJaguar from "@/assets/Jaguarblack_perfumes.png";
+import Mitthi from "@/assets/mittiperfumes.png";
+import MOgra from "@/assets/mograperfumes.png";
+import MuskRizali from "@/assets/musk_rizali.png";
+import PurpleOud from "@/assets/Purpleoudper.png";
+import Zatex from "@/assets/zataxper.png";
 
 const Perfumes = () => {
   const perfumeCategories = {
@@ -33,7 +49,7 @@ const Perfumes = () => {
           name: "Green Ajmeri",
           description: "Earthy, classic attar vibe with oud base",
           price: 249,
-          image: oudImage,
+          image: GreenAjmeri,
           rating: 4.9,
           category: "Woody & Oriental",
         },
@@ -42,7 +58,7 @@ const Perfumes = () => {
           name: "Black Jaguar",
           description: "Bold masculine scent with dark woody notes",
           price: 279,
-          image: oudImage,
+          image: BlackJaguar,
           rating: 4.8,
           category: "Woody & Oriental",
           isNew: true,
@@ -52,7 +68,7 @@ const Perfumes = () => {
           name: "Tam Dao",
           description: "Exquisite sandalwood blend with cedar undertones",
           price: 319,
-          image: oudImage,
+          image: Dyptiq,
           rating: 5.0,
           category: "Woody & Oriental",
           isBestSeller: true,
@@ -62,8 +78,55 @@ const Perfumes = () => {
           name: "White Oud",
           description: "Pure white oud with soft musk accents",
           price: 329,
-          image: oudImage,
+          image: AroImage,
           rating: 4.9,
+          category: "Woody & Oriental",
+        },
+        {
+          id: "perf-19",
+          name: "Purple Oud",
+          description: "Royal oud blend with violet and amber",
+          price: 349,
+          image: PurpleOud,
+          rating: 5.0,
+          category: "Woody & Oriental",
+          isNew: true,
+        },
+        {
+          id: "perf-20",
+          name: "BelaVitta Oud",
+          description: "Luxurious oud with soft floral undertones",
+          price: 339,
+          image: Belavitaoud,
+          rating: 4.9,
+          category: "Woody & Oriental",
+        },
+        {
+          id: "perf-21",
+          name: "Shagaf Oud",
+          description: "Passionate oud with rich woody base",
+          price: 359,
+          image: AroImage,
+          rating: 5.0,
+          category: "Woody & Oriental",
+          isBestSeller: true,
+        },
+        {
+          id: "perf-22",
+          name: "Khamaraha Latafa",
+          description: "Opulent Arabian oud with spicy notes",
+          price: 369,
+          image: AroImage,
+          rating: 4.9,
+          category: "Woody & Oriental",
+        },
+        {
+          id: "perf-23",
+          name: "Sandalwood Amber",
+          description: "Warm sandalwood with golden amber harmony",
+          price: 289,
+          image: AroImage,
+          rating: 4.8,
           category: "Woody & Oriental",
         }
       ]
@@ -79,7 +142,7 @@ const Perfumes = () => {
           name: "Mogra",
           description: "Pure Indian jasmine aroma, traditional favorite",
           price: 189,
-          image: roseImage,
+          image: MOgra,
           rating: 4.9,
           category: "Floral & Fresh",
           isBestSeller: true,
@@ -89,7 +152,7 @@ const Perfumes = () => {
           name: "Dove",
           description: "Soft, clean, and refreshing like a morning breeze",
           price: 149,
-          image: roseImage,
+          image: Dove,
           rating: 4.8,
           category: "Floral & Fresh",
         },
@@ -98,9 +161,19 @@ const Perfumes = () => {
           name: "Charlie",
           description: "Modern floral fusion with a gentle charm",
           price: 169,
-          image: roseImage,
+          image: Charlieper,
           rating: 4.7,
           category: "Floral & Fresh",
+        },
+        {
+          id: "perf-24",
+          name: "Shanaya",
+          description: "Elegant floral bouquet with rose and jasmine",
+          price: 209,
+          image: AroImage,
+          rating: 4.9,
+          category: "Floral & Fresh",
+          isNew: true,
         }
       ]
     },
@@ -115,7 +188,7 @@ const Perfumes = () => {
           name: "Chocolate Musk",
           description: "Creamy, sweet blend with musk depth",
           price: 199,
-          image: heroImage,
+          image: Choclatemusk,
           rating: 4.9,
           category: "Sweet & Musky",
           isNew: true,
@@ -125,7 +198,7 @@ const Perfumes = () => {
           name: "Mitthi",
           description: "Soft, sweet traditional scent reminiscent of rain-soaked earth",
           price: 159,
-          image: heroImage,
+          image: Mitthi,
           rating: 4.8,
           category: "Sweet & Musky",
         },
@@ -134,7 +207,7 @@ const Perfumes = () => {
           name: "Blackberry",
           description: "Fruity-sweet with a musky base",
           price: 179,
-          image: heroImage,
+          image: Blackberry,
           rating: 4.7,
           category: "Sweet & Musky",
         },
@@ -143,7 +216,7 @@ const Perfumes = () => {
           name: "Musk Rizali",
           description: "Deep musk with rose and amber harmony",
           price: 229,
-          image: heroImage,
+          image: MuskRizali,
           rating: 4.8,
           category: "Sweet & Musky",
         },
@@ -152,7 +225,7 @@ const Perfumes = () => {
           name: "Bare Vanilla",
           description: "Soft creamy vanilla with gentle embrace",
           price: 219,
-          image: heroImage,
+          image: Barevanilla,
           rating: 4.7,
           category: "Sweet & Musky",
         }
@@ -170,7 +243,7 @@ const Perfumes = () => {
           description: "Sporty, modern, and vibrant masculine scent",
           price: 219,
           originalPrice: 289,
-          image: heroImage,
+          image: CR7,
           rating: 4.9,
           category: "Cool & Sporty",
           isBestSeller: true,
@@ -180,7 +253,7 @@ const Perfumes = () => {
           name: "Zatax",
           description: "Strong, fresh blend inspired by designer perfumes",
           price: 199,
-          image: heroImage,
+          image: Zatex,
           rating: 4.8,
           category: "Cool & Sporty",
         },
@@ -189,7 +262,7 @@ const Perfumes = () => {
           name: "Azzaro",
           description: "Premium blend with citrus and spice edges",
           price: 239,
-          image: heroImage,
+          image: AroImage,
           rating: 4.9,
           category: "Cool & Sporty",
         },
@@ -198,7 +271,7 @@ const Perfumes = () => {
           name: "Dior Sauvage",
           description: "Iconic pepper and bergamot fusion with ambroxan",
           price: 349,
-          image: oceanImage,
+          image: Dior,
           rating: 5.0,
           category: "Cool & Sporty",
           isBestSeller: true,
@@ -208,9 +281,19 @@ const Perfumes = () => {
           name: "Hawas",
           description: "Aquatic freshness with citrus and woody notes",
           price: 269,
-          image: oceanImage,
+          image: Hawas,
           rating: 4.9,
           category: "Cool & Sporty",
+        },
+        {
+          id: "perf-25",
+          name: "Cool Water",
+          description: "Fresh aquatic with mint and lavender accents",
+          price: 229,
+          image: CoolWater,
+          rating: 4.8,
+          category: "Cool & Sporty",
+          isNew: true,
         }
       ]
     }
@@ -284,7 +367,7 @@ const Perfumes = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {category.products.map((product, index) => (
                   <div key={product.id} className="animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
-                    <ProductCard {...product} />
+                    <ProductCard {...product} showVariants={true} />
                   </div>
                 ))}
               </div>

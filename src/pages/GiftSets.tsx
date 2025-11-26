@@ -4,10 +4,8 @@ import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Gift, Heart, Star, Crown, Sparkles, Package } from "lucide-react";
-import roseImage from "@/assets/perfume-rose.jpg";
-import oudImage from "@/assets/perfume-oud.jpg";
-import oceanImage from "@/assets/perfume-ocean.jpg";
-import heroImage from "@/assets/hero-perfume.jpg";
+import Giftset from "@/assets/Aromyst_gift.png";
+
 
 const GiftSets = () => {
   const giftSets = [
@@ -17,7 +15,7 @@ const GiftSets = () => {
       description: "Amerul Oud, Green Ajmeri & Black Jaguar - Bold, mysterious, and timeless fragrances in luxury gift box.",
       price: 799,
       originalPrice: 867,
-      image: oudImage,
+      image: Giftset,
       rating: 4.9,
       category: "Woody & Oriental",
       isBestSeller: true,
@@ -28,7 +26,7 @@ const GiftSets = () => {
       description: "Mogra, Dove & Charlie - Elegant fragrances that speak softly with matching silk pouch.",
       price: 499,
       originalPrice: 537,
-      image: roseImage,
+      image: Giftset,
       rating: 4.8,
       category: "Floral & Fresh",
       isNew: true,
@@ -39,7 +37,7 @@ const GiftSets = () => {
       description: "Chocolate Musk, Mitthi & Blackberry - Sweetness that stays with you, in premium packaging.",
       price: 599,
       originalPrice: 627,
-      image: heroImage,
+      image: Giftset,
       rating: 4.7,
       category: "Sweet & Musky",
     },
@@ -49,7 +47,7 @@ const GiftSets = () => {
       description: "CR7, Zatax & Azzaro - Freshness that fuels your day in an elegant presentation case.",
       price: 679,
       originalPrice: 707,
-      image: oceanImage,
+      image: Giftset,
       rating: 5.0,
       category: "Cool & Sporty",
       isBestSeller: true,
@@ -59,7 +57,7 @@ const GiftSets = () => {
       name: "Premium Duo - Dior Sauvage & Hawas",
       description: "Two luxury fragrances for the modern gentleman with personalized engraving option.",
       price: 599,
-      image: oceanImage,
+      image: Giftset,
       rating: 4.9,
       category: "Premium Collection",
     },
@@ -68,7 +66,7 @@ const GiftSets = () => {
       name: "Discovery Sample Set",
       description: "Perfect introduction - 12 sample vials from all fragrance categories.",
       price: 89,
-      image: heroImage,
+      image: Giftset,
       rating: 4.6,
       category: "Discovery",
       isNew: true,

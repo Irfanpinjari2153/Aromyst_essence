@@ -16,6 +16,7 @@ interface ProductCardProps {
   category: string;
   isNew?: boolean;
   isBestSeller?: boolean;
+  showVariants?: boolean;
 }
 
 export const ProductCard = ({
@@ -29,20 +30,26 @@ export const ProductCard = ({
   category,
   isNew,
   isBestSeller,
+  showVariants = false,
 }: ProductCardProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [showQuickView, setShowQuickView] = useState(false);
+  const [selectedVariant, setSelectedVariant] = useState<'EDT' | 'EDP'>('EDT');
   const { addToCart } = useCart();
+
+  const variantPrice = selectedVariant === 'EDP' ? Math.round(price * 1.2) : price;
+  const variantOriginalPrice = originalPrice && selectedVariant === 'EDP' ? Math.round(originalPrice * 1.2) : originalPrice;
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
     addToCart({
       id,
       name,
-      price,
+      price: variantPrice,
       image,
-      category
+      category,
+      variant: selectedVariant
     });
   };
 
@@ -130,19 +137,51 @@ export const ProductCard = ({
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+        <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
           {description}
         </p>
+
+        {/* Variant Selector - Only show if showVariants is true */}
+        {showVariants && (
+          <div className="flex gap-2 mb-3">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedVariant('EDT');
+              }}
+              className={`flex-1 px-3 py-2 text-xs font-medium rounded-md transition-all duration-300 ${
+                selectedVariant === 'EDT'
+                  ? 'bg-accent text-accent-foreground shadow-md scale-105'
+                  : 'bg-muted/30 text-muted-foreground hover:bg-muted/50'
+              }`}
+            >
+              EDT
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedVariant('EDP');
+              }}
+              className={`flex-1 px-3 py-2 text-xs font-medium rounded-md transition-all duration-300 ${
+                selectedVariant === 'EDP'
+                  ? 'bg-accent text-accent-foreground shadow-md scale-105'
+                  : 'bg-muted/30 text-muted-foreground hover:bg-muted/50'
+              }`}
+            >
+              EDP <span className="text-[10px]">(+20%)</span>
+            </button>
+          </div>
+        )}
 
         {/* Price */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-xl font-bold gradient-text">
-              ₹{price}
+              ₹{showVariants ? variantPrice : price}
             </span>
-            {originalPrice && (
+            {(showVariants ? variantOriginalPrice : originalPrice) && (
               <span className="text-sm text-muted-foreground line-through">
-                ₹{originalPrice}
+                ₹{showVariants ? variantOriginalPrice : originalPrice}
               </span>
             )}
           </div>
@@ -162,6 +201,7 @@ export const ProductCard = ({
         isOpen={showQuickView}
         onClose={() => setShowQuickView(false)}
         product={{ id, name, description, price, originalPrice, image, rating, category, isNew, isBestSeller }}
+        initialVariant={selectedVariant}
       />
     </Card>
   );

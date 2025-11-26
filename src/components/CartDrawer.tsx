@@ -35,20 +35,25 @@ export const CartDrawer = () => {
           ) : (
             <>
               {items.map((item) => (
-                <div key={item.id} className="flex gap-4 pb-6 border-b">
+                <div key={`${item.id}-${item.variant}`} className="flex gap-4 pb-6 border-b animate-fade-in">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-24 h-24 object-cover rounded-lg"
+                    className="w-24 h-24 object-cover rounded-lg transition-transform duration-300 hover:scale-105"
                   />
                   <div className="flex-1">
                     <h4 className="font-semibold mb-1">{item.name}</h4>
-                    <p className="text-sm text-muted-foreground mb-2">{item.category}</p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <p className="text-sm text-muted-foreground">{item.category}</p>
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-accent/20 text-accent font-medium">
+                        {item.variant}
+                      </span>
+                    </div>
                     <div className="flex items-center gap-2">
                       <Button
                         variant="outline"
                         size="icon"
-                        className="h-8 w-8"
+                        className="h-8 w-8 transition-all duration-300 hover:scale-110 hover:border-accent"
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
                       >
                         <Minus className="w-3 h-3" />
@@ -57,7 +62,7 @@ export const CartDrawer = () => {
                       <Button
                         variant="outline"
                         size="icon"
-                        className="h-8 w-8"
+                        className="h-8 w-8 transition-all duration-300 hover:scale-110 hover:border-accent"
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
                       >
                         <Plus className="w-3 h-3" />
@@ -68,7 +73,7 @@ export const CartDrawer = () => {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="h-8 w-8"
+                      className="h-8 w-8 transition-all duration-300 hover:scale-110 hover:text-destructive"
                       onClick={() => removeFromCart(item.id)}
                     >
                       <Trash2 className="w-4 h-4" />

@@ -76,7 +76,14 @@ export const OrderDetailsModal = ({ order, open, onOpenChange }: OrderDetailsMod
                   />
                   <div className="flex-1">
                     <p className="font-medium">{item.name}</p>
-                    <p className="text-sm text-muted-foreground">Quantity: {item.quantity}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm text-muted-foreground">Quantity: {item.quantity}</p>
+                      {item.variant && (
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-accent/20 text-accent font-medium">
+                          {item.variant}
+                        </span>
+                      )}
+                    </div>
                   </div>
                   <p className="font-semibold">₹{(item.price * item.quantity).toFixed(2)}</p>
                 </div>

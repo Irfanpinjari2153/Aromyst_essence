@@ -1,8 +1,6 @@
 import { ProductCard } from "./ProductCard";
-import roseImage from "@/assets/perfume-rose.jpg";
-import oudImage from "@/assets/perfume-oud.jpg";
-import oceanImage from "@/assets/perfume-ocean.jpg";
-import heroImage from "@/assets/hero-perfume.jpg";
+import AroImage from "@/assets/Aromystper.jpeg";
+
 
 const featuredProducts = [
   {
@@ -11,7 +9,7 @@ const featuredProducts = [
     description: "Rich, smoky oud tone with Arabic warmth",
     price: 299,
     originalPrice: 399,
-    image: oudImage,
+    image: AroImage,
     rating: 5.0,
     category: "Woody & Oriental",
     isBestSeller: true,
@@ -21,7 +19,7 @@ const featuredProducts = [
     name: "Mogra",
     description: "Pure Indian jasmine aroma, traditional favorite",
     price: 189,
-    image: roseImage,
+    image: AroImage,
     rating: 4.9,
     category: "Floral & Fresh",
     isBestSeller: true,
@@ -32,7 +30,7 @@ const featuredProducts = [
     description: "Sporty, modern, and vibrant masculine scent",
     price: 219,
     originalPrice: 289,
-    image: heroImage,
+    image: AroImage,
     rating: 4.9,
     category: "Cool & Sporty",
     isBestSeller: true,
@@ -42,7 +40,7 @@ const featuredProducts = [
     name: "Chocolate Musk",
     description: "Creamy, sweet blend with musk depth",
     price: 199,
-    image: heroImage,
+    image: AroImage,
     rating: 4.9,
     category: "Sweet & Musky",
     isNew: true,
@@ -52,7 +50,7 @@ const featuredProducts = [
     name: "Green Ajmeri",
     description: "Earthy, classic attar vibe with oud base",
     price: 249,
-    image: oudImage,
+    image: AroImage,
     rating: 4.9,
     category: "Woody & Oriental",
   },
@@ -61,7 +59,7 @@ const featuredProducts = [
     name: "Dove",
     description: "Soft, clean, and refreshing like a morning breeze",
     price: 149,
-    image: oceanImage,
+    image: AroImage,
     rating: 4.8,
     category: "Floral & Fresh",
     isNew: true,

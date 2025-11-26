@@ -10,6 +10,7 @@ export interface CartItem {
   image: string;
   quantity: number;
   category: string;
+  variant: 'EDT' | 'EDP';
 }
 
 interface CartContextType {
@@ -40,14 +41,14 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const addToCart = (item: Omit<CartItem, 'quantity'>) => {
     setItems(prev => {
-      const existing = prev.find(i => i.id === item.id);
+      const existing = prev.find(i => i.id === item.id && i.variant === item.variant);
       if (existing) {
         toast.success('Quantity updated in cart');
         return prev.map(i => 
-          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+          i.id === item.id && i.variant === item.variant ? { ...i, quantity: i.quantity + 1 } : i
         );
       }
-      toast.success('Added to cart');
+      toast.success(`Added ${item.variant} to cart`);
       return [...prev, { ...item, quantity: 1 }];
     });
   };

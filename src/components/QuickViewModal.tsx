@@ -20,21 +20,27 @@ interface QuickViewModalProps {
     isNew?: boolean;
     isBestSeller?: boolean;
   };
+  initialVariant?: 'EDT' | 'EDP';
 }
 
-export const QuickViewModal = ({ isOpen, onClose, product }: QuickViewModalProps) => {
+export const QuickViewModal = ({ isOpen, onClose, product, initialVariant = 'EDT' }: QuickViewModalProps) => {
   const [quantity, setQuantity] = useState(1);
   const [isLiked, setIsLiked] = useState(false);
+  const [selectedVariant, setSelectedVariant] = useState<'EDT' | 'EDP'>(initialVariant);
   const { addToCart } = useCart();
+
+  const variantPrice = selectedVariant === 'EDP' ? Math.round(product.price * 1.2) : product.price;
+  const variantOriginalPrice = product.originalPrice && selectedVariant === 'EDP' ? Math.round(product.originalPrice * 1.2) : product.originalPrice;
 
   const handleAddToCart = () => {
     for (let i = 0; i < quantity; i++) {
       addToCart({
         id: product.id,
         name: product.name,
-        price: product.price,
+        price: variantPrice,
         image: product.image,
-        category: product.category
+        category: product.category,
+        variant: selectedVariant
       });
     }
     onClose();
@@ -98,12 +104,41 @@ export const QuickViewModal = ({ isOpen, onClose, product }: QuickViewModalProps
 
             <p className="text-muted-foreground leading-relaxed">{product.description}</p>
 
+            {/* Variant Selector */}
+            <div className="space-y-2">
+              <span className="font-medium text-sm">Concentration:</span>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setSelectedVariant('EDT')}
+                  className={`flex-1 px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 ${
+                    selectedVariant === 'EDT'
+                      ? 'bg-accent text-accent-foreground shadow-lg scale-105 ring-2 ring-accent/50'
+                      : 'bg-muted/30 text-muted-foreground hover:bg-muted/50 hover:scale-102'
+                  }`}
+                >
+                  <div>EDT</div>
+                  <div className="text-xs opacity-80">Eau de Toilette</div>
+                </button>
+                <button
+                  onClick={() => setSelectedVariant('EDP')}
+                  className={`flex-1 px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 ${
+                    selectedVariant === 'EDP'
+                      ? 'bg-accent text-accent-foreground shadow-lg scale-105 ring-2 ring-accent/50'
+                      : 'bg-muted/30 text-muted-foreground hover:bg-muted/50 hover:scale-102'
+                  }`}
+                >
+                  <div>EDP <span className="text-xs">(+20%)</span></div>
+                  <div className="text-xs opacity-80">Eau de Parfum</div>
+                </button>
+              </div>
+            </div>
+
             {/* Price */}
             <div className="flex items-center gap-3">
-              <span className="text-3xl font-bold gradient-text">₹{product.price}</span>
-              {product.originalPrice && (
+              <span className="text-3xl font-bold gradient-text">₹{variantPrice}</span>
+              {variantOriginalPrice && (
                 <span className="text-lg text-muted-foreground line-through">
-                  ₹{product.originalPrice}
+                  ₹{variantOriginalPrice}
                 </span>
               )}
             </div>

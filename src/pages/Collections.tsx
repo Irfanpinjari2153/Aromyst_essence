@@ -4,10 +4,18 @@ import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Filter, Grid3X3, List, SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
-import roseImage from "@/assets/perfume-rose.jpg";
-import oudImage from "@/assets/perfume-oud.jpg";
-import oceanImage from "@/assets/perfume-ocean.jpg";
-import heroImage from "@/assets/hero-perfume.jpg";
+import OudAmerul from "@/assets/Amerul_oud_perfumes.png";
+import GreenAjmeri from "@/assets/greenajmeriperfumes.png";
+import BlackJaguar from "@/assets/Aromystper.jpeg";
+import Mogra from "@/assets/mograperfumes.png";
+import Dove from "@/assets/doveperfumes.png";
+import charlie from "@/assets/charlieperfumes.png";
+import choclate from "@/assets/choclatemuskperfumes.png";
+import mitti from "@/assets/mittiperfumes.png";
+import BlackBerry from "@/assets/blackberryper.png";
+import Cr7 from "@/assets/CR7_perfumes.png";
+import Zatax from "@/assets/zataxper.png";
+import Azzarro from "@/assets/Aromystper.jpeg";
 
 const Collections = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -24,7 +32,7 @@ const Collections = () => {
           name: "Amerul Oud",
           description: "Rich, smoky oud tone with Arabic warmth",
           price: 156,
-          image: oudImage,
+          image: OudAmerul,
           rating: 4.9,
           category: "Woody & Oriental",
           isBestSeller: true,
@@ -34,7 +42,7 @@ const Collections = () => {
           name: "Green Ajmeri",
           description: "Earthy, classic attar vibe with oud base",
           price: 134,
-          image: heroImage,
+          image: GreenAjmeri,
           rating: 4.8,
           category: "Woody & Oriental",
         },
@@ -43,7 +51,7 @@ const Collections = () => {
           name: "Black Jaguar",
           description: "Bold masculine scent with dark woody notes",
           price: 145,
-          image: heroImage,
+          image: BlackJaguar,
           rating: 4.7,
           category: "Woody & Oriental",
           isNew: true,
@@ -62,7 +70,7 @@ const Collections = () => {
           description: "Pure Indian jasmine aroma, traditional favorite",
           price: 89,
           originalPrice: 120,
-          image: roseImage,
+          image: Mogra,
           rating: 4.8,
           category: "Floral & Fresh",
           isBestSeller: true,
@@ -72,7 +80,7 @@ const Collections = () => {
           name: "Dove",
           description: "Soft, clean, and refreshing like a morning breeze",
           price: 67,
-          image: oceanImage,
+          image: Dove,
           rating: 4.6,
           category: "Floral & Fresh",
         },
@@ -81,7 +89,7 @@ const Collections = () => {
           name: "Charlie",
           description: "Modern floral fusion with a gentle charm",
           price: 78,
-          image: roseImage,
+          image: charlie,
           rating: 4.5,
           category: "Floral & Fresh",
         }
@@ -98,7 +106,7 @@ const Collections = () => {
           name: "Chocolate Musk",
           description: "Creamy, sweet blend with musk depth",
           price: 98,
-          image: heroImage,
+          image: choclate,
           rating: 4.7,
           category: "Sweet & Musky",
           isNew: true,
@@ -108,7 +116,7 @@ const Collections = () => {
           name: "Mitthi",
           description: "Soft, sweet traditional scent reminiscent of rain-soaked earth",
           price: 85,
-          image: heroImage,
+          image: mitti,
           rating: 4.6,
           category: "Sweet & Musky",
         },
@@ -117,7 +125,7 @@ const Collections = () => {
           name: "Blackberry",
           description: "Fruity-sweet with a musky base",
           price: 92,
-          image: heroImage,
+          image: BlackBerry,
           rating: 4.5,
           category: "Sweet & Musky",
         }
@@ -134,7 +142,7 @@ const Collections = () => {
           name: "CR7",
           description: "Sporty, modern, and vibrant masculine scent",
           price: 110,
-          image: heroImage,
+          image: Cr7,
           rating: 4.8,
           category: "Cool & Sporty",
           isBestSeller: true,
@@ -144,7 +152,7 @@ const Collections = () => {
           name: "Zatax",
           description: "Strong, fresh blend inspired by designer perfumes",
           price: 105,
-          image: oceanImage,
+          image: Zatax,
           rating: 4.7,
           category: "Cool & Sporty",
         },
@@ -153,7 +161,7 @@ const Collections = () => {
           name: "Azzaro",
           description: "Premium blend with citrus and spice edges",
           price: 115,
-          image: oceanImage,
+          image: Azzarro,
           rating: 4.6,
           category: "Cool & Sporty",
           isNew: true,

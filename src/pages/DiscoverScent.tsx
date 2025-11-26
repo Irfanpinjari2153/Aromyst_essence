@@ -210,7 +210,8 @@ const DiscoverScent = () => {
                           name: rec.name,
                           price: rec.price,
                           image: rec.image,
-                          category: rec.category
+                          category: rec.category,
+                          variant: 'EDT'
                         })}
                       >
                         Add to Cart
